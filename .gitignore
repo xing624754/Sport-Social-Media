@@ -1,7 +1,0 @@
-__pycache__/
-venv/
-.env
-**/.env
-node_modules
-*.env
-backend/.env
