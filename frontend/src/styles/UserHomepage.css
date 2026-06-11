@@ -1,0 +1,787 @@
+/* middle (main) + right sidebar */
+.userHomeLayout {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 24px;
+    position: relative;
+}
+
+/* Scoped to the homepage so another page's global `.mainContent`
+   (which adds padding/max-width) can't leak in and shrink the posts. */
+.userHomeLayout .mainContent {
+    min-width: 0;
+    padding: 0;
+    max-width: none;
+    margin: 0;
+}
+
+/* Search bar (finds posts by title/description) */
+.postSearchBar {
+    display: flex;
+    gap: 8px;
+    margin: 0 auto 16px;
+    max-width: 470px;
+}
+
+.postSearchInput {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: "Commissioner", sans-serif;
+    outline: none;
+}
+
+.postSearchInput:focus {
+    border-color: #6565fd;
+}
+
+.postSearchBtn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    background: #6565fd;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: "Commissioner", sans-serif;
+}
+
+.postSearchBtn:hover {
+    background: #5151e0;
+}
+
+/* "Results for X" header shown while searching */
+.searchResultHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 470px;
+    margin: 0 auto 20px;
+    padding: 8px 14px;
+    background: #f8f9fc;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #334155;
+}
+
+.clearBtn {
+    border: none;
+    border-radius: 8px;
+    padding: 6px 14px;
+    background: #e2e8f0;
+    color: #334155;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: "Commissioner", sans-serif;
+}
+
+.clearBtn:hover {
+    background: #cbd5e1;
+}
+
+/* Tab bar  */
+.tabBar {
+    display: flex;
+    gap: 8px;
+    margin: 0 auto 20px;
+    max-width: 470px;
+    padding: 6px;
+    background: #f8f9fc;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.tabBtn {
+    flex: 1;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: "Commissioner", sans-serif;
+}
+
+.tabBtn:hover {
+    background: #d8e2ff;
+    color: black;
+}
+
+.tabBtn.active {
+    background: #6565fd;
+    color: white;
+}
+
+/* Post list  */
+.postList {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    max-width: 470px;
+    margin: 0 auto;
+}
+
+/* Post card  */
+.postCard {
+    background: #f8f9fc;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* Post header  */
+.postHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+}
+
+.postAvatarFallback {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #2563eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+/* Ad header avatar (image) — uses ads_profile_pic */
+.postAvatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.postUserInfo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.postUsername {
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    cursor: pointer;
+}
+
+.postTime {
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* Ad label */
+.adLabel {
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Community name pill */
+.postCommunityTag {
+    margin-left: auto;
+    background: #eef2ff;
+    color: #6565fd;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 9999px;
+    white-space: nowrap;
+}
+
+/* Post media  */
+.postMedia {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #f1f5f9;
+}
+
+.postMedia img,
+.postMedia video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;   /* show the whole image/video — don't crop */
+    display: block;
+}
+
+.postMediaPlaceholder {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #e2e8f0;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+}
+
+/* ----- Photo carousel (Instagram-style) ----- */
+.postMedia.carousel {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f5f9;
+    overflow: hidden;
+}
+
+.postMedia.carousel img,
+.postMedia.carousel video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.carouselArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carouselArrow:hover {
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.carouselArrow.left {
+    left: 8px; 
+}
+
+.carouselArrow.right { 
+    right: 8px; 
+}
+
+.carouselCount {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.carouselDots {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.carouselDots .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.carouselDots .dot.active {
+    background: #fff;
+}
+
+/* Action row  */
+.postFooter {
+    display: flex;
+    gap: 14px;
+    padding: 10px 14px 12px;
+    color: #64748b;
+    align-items: center;
+    border-top: 1px solid #e2e8f0;
+}
+
+.footerItem {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    color: #64748b;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.footerItem:hover {
+    color: #6565fd;
+}
+
+.footerItem .material-symbols-outlined {
+    font-size: 22px;
+}
+
+.postFooter .bookmark {
+    margin-left: auto;
+}
+
+/* Caption ( */
+.postTitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    margin: 0;
+    padding: 10px 14px 2px;
+    overflow-wrap: break-word;    /* wrap long unbroken titles too */
+}
+
+.postDescription {
+    font-size: 13px;
+    color: #475569;
+    line-height: 1.45;
+    margin: 0;
+    padding: 0 14px 10px;
+    white-space: pre-wrap;        /* keep the line breaks & spacing the user typed */
+    overflow-wrap: break-word;    /* wrap long unbroken strings  */
+}
+
+/* Collapsed: show only ~4 lines */
+.postDescription.clamped {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* "...more" / "Show less" toggle under the description */
+.moreBtn {
+    background: none;
+    border: none;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0 14px 10px;
+    font-family: "Commissioner", sans-serif;
+}
+
+.moreBtn:hover {
+    color: #6565fd;
+}
+
+/* Hashtags under the caption */
+.postHashtags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 0 14px 10px;
+}
+
+.postHashtag {
+    background: #eff6ff;
+    color: #2563eb;
+    padding: 2px 10px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Empty feed message (shown when a tab has no posts) */
+.emptyFeed {
+    max-width: 470px;
+    margin: 0 auto;
+    background: #f8f9fc;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    padding: 48px 28px;
+    text-align: center;
+}
+
+.emptyFeed .material-symbols-outlined {
+    font-size: 52px;
+    color: #94a3b8;
+}
+
+.emptyFeed p {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* Right sidebar */
+.rightSidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.rightBox {
+    background: #f8f9fc;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.rightBox h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 12px;
+}
+
+/* Empty message inside a sidebar box */
+.emptyBox {
+    font-size: 13px;
+    color: #64748b;
+}
+
+.rightRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 2px;
+    padding: 6px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.rightRow:hover {
+    background: #eef2ff;
+}
+
+.rightRow:last-child {
+    margin-bottom: 0;
+}
+
+.rightAvatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #6565fd;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.rightName {
+    flex: 1;
+    font-size: 13px;
+    color: #334155;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Small arrow on the right of a people row (hints "click to open") */
+.rightArrow {
+    font-size: 20px;
+    color: #94a3b8;
+}
+
+.followBtn,
+.joinBtn {
+    padding: 5px 12px;
+    border: none;
+    border-radius: 8px;
+    background: #6565fd;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: "Commissioner", sans-serif;
+}
+
+.followBtn:hover,
+.joinBtn:hover {
+    background: #4c4cf5;
+}
+
+.joinBtn:disabled {
+    cursor: default;
+    background: #a3a3fe;
+}
+
+/* Stack on smaller screens */
+@media (max-width: 1100px) {
+    .userHomeLayout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* giusername search */
+.peopleSearch {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.peopleSearch input {
+    flex: 1;
+    min-width: 0;
+    padding: 7px 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 13px;
+    outline: none;
+    font-family: "Commissioner", sans-serif;
+}
+
+.peopleSearch input:focus {
+    border-color: #6565fd;
+}
+
+.peopleSearch button {
+    padding: 7px 12px;
+    border: none;
+    border-radius: 8px;
+    background: #6565fd;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.newPostsBannerContainer {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 85px; /* Floats below the topbar */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.newPostsBannerBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    background: linear-gradient(135deg, #6565fd 0%, #4b4bfa 100%);
+    color: #fff;
+    border: none;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 13.5px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(101, 101, 253, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    font-family: "Commissioner", sans-serif;
+}
+
+.newPostsBannerBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(101, 101, 253, 0.6);
+}
+
+.newPostsBannerBtn:active {
+    transform: translateY(0);
+}
+
+/* Mobile Suggestions Carousel Styles */
+.mobileSuggestions {
+    display: none;
+}
+
+@media (max-width: 1100px) {
+    .rightSidebar {
+        display: none !important;
+    }
+    
+    .userHomeLayout {
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+    }
+    
+    .mobileSuggestions {
+        display: block;
+        margin: 0 auto 24px;
+        max-width: 470px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .mobileSection {
+        margin-bottom: 20px;
+    }
+    
+    .mobileSectionHeader {
+        margin-bottom: 8px;
+        padding: 0 4px;
+    }
+    
+    .mobileSectionHeader h4 {
+        font-size: 14px;
+        font-weight: 600;
+        color: #475569;
+        margin: 0;
+    }
+
+    .mobileScrollWrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .scrollArrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid #cbd5e1;
+        color: #334155;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+        transition: all 0.2s ease;
+        opacity: 0;
+    }
+
+    .mobileScrollWrapper:hover .scrollArrow {
+        opacity: 1;
+    }
+
+    .scrollArrow:hover {
+        background: #6565fd;
+        color: #fff;
+        border-color: #6565fd;
+    }
+
+    .scrollArrow.left {
+        left: -12px;
+    }
+
+    .scrollArrow.right {
+        right: -12px;
+    }
+
+    .scrollArrow span {
+        font-size: 18px;
+        line-height: 1;
+    }
+    
+    .mobileScrollContainer {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        padding: 8px 4px;
+        scrollbar-width: none;
+        width: 100%;
+    }
+    
+    .mobileScrollContainer::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .mobileCard {
+        flex: 0 0 120px;
+        background: #f8f9fc;
+        border-radius: 12px;
+        padding: 12px 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        border: 1px solid #f1f5f9;
+        box-sizing: border-box;
+    }
+    
+    .mobileAvatar {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: #e2e8f0;
+        color: #6565fd;
+        font-size: 16px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 8px;
+        overflow: hidden;
+    }
+    
+    .mobileName {
+        font-size: 12px;
+        font-weight: 600;
+        color: #334155;
+        margin-bottom: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+    }
+    
+    .mobileFollowBtn {
+        width: 100%;
+        padding: 5px 0;
+        border: none;
+        border-radius: 6px;
+        background: #6565fd;
+        color: white;
+        font-size: 11px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-family: "Commissioner", sans-serif;
+    }
+    
+    .mobileFollowBtn:hover {
+        background: #4b4bfa;
+    }
+    
+    .mobileFollowBtn.pending {
+        background: #e2e8f0;
+        color: #475569;
+    }
+    
+    .mobileFollowBtn.joined {
+        background: #cbd5e1;
+        color: #64748b;
+        cursor: default;
+    }
+}
+
+@media (max-width: 768px) {
+    .scrollArrow {
+        display: none !important;
+    }
+}
+

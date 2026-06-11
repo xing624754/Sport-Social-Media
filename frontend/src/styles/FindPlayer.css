@@ -1,0 +1,364 @@
+
+#find-player-wrapper {
+    gap: 15px;
+}
+
+#header {
+    color: rgb(28, 107, 255);
+    font-size: 30px;
+}
+
+#quote {
+    padding: 10px;
+    color: rgb(95, 154, 255);
+    font-size: 20px;
+    font-style: italic;
+}
+
+.find-player-form {
+    padding: 10px;
+    min-width: 600px;
+    min-height: 500px;
+
+    border: 5px solid rgb(0, 53, 145);
+    border-radius: 20px;
+    background-image: url("../assets/authBackground.png");
+    box-shadow: 0 5px 15px rgba(0, 30, 130, 0.7);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    padding: 15px;
+}
+
+.select-label {
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.select-button, .select-button.selected {
+    min-width: 150px;
+    padding: 10px 10px;
+
+    font-size: 22px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(120, 193, 211, 0.62);
+
+    border-radius: 20px;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.select-button{
+    color: rgb(171, 221, 246);
+    background: rgba(1, 133, 181, 0.7);
+    border: 4px solid rgb(126, 205, 241);
+}
+
+.select-button.selected, .select-button:hover{
+    color: rgb(187, 197, 255);
+    background: rgba(141, 104, 252, 0.546);
+    border: 4px solid rgb(146, 161, 249);
+}
+
+.select-button:hover {
+    transform: translateY(3px);
+}
+
+.back-button-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.back-button {
+    width: 95px;
+    height: 50px;
+    
+    font-size: 20px;
+    font-weight: bold;
+
+    color: rgb(246, 171, 245);
+    background: rgba(189, 28, 183, 0.6);
+    border: 4px solid rgb(246, 171, 245);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(120, 193, 211, 0.62);
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.back-button:hover {
+    background: rgba(138, 6, 134, 0.6);
+    transform: translateY(-3px);
+}
+
+.match-button {
+    padding: 10px 20px;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    border: 4px solid rgb(255, 222, 160);
+    border-radius: 15px;
+    background: rgba(204, 149, 48, 0.6);
+    color: rgb(255, 216, 143);
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.match-button:hover {
+    background: rgba(168, 115, 18, 0.6);
+    transform: translateY(-5px);
+}
+
+.match-result-header {
+    color: rgb(127, 198, 255);
+    font-size: 30px;
+}
+
+.result-container {
+    width: 80%;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    border: 4px solid rgb(49, 203, 230);
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(120, 193, 211, 0.62);
+    background: rgba(22, 146, 163, 0.5);
+}
+
+.result-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+#user-wrapper {
+    font-size: 24px;
+    color: rgb(49, 203, 230);
+    font-weight: bold;
+}
+
+.result-user-label {
+    text-decoration: underline;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.result-user-label:hover {
+    color: rgb(22, 160, 185);
+}
+
+.result-label {
+    font-size: 22px;
+    color: white;
+}
+
+#gender-wrapper, 
+#age-wrapper, 
+#sport-wrapper, 
+#skill-level-wrapper {
+    
+    min-width: 250px;
+    padding: 10px;
+
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.2s ease;
+}
+
+#gender-wrapper:hover, 
+#age-wrapper:hover, 
+#sport-wrapper:hover, 
+#skill-level-wrapper:hover {
+    transform: translateY(-2px);
+}
+
+#gender-wrapper {
+    border: 4px solid rgb(235, 176, 124);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgb(237, 162, 97);
+    background: rgba(203, 105, 20, 0.665);
+    color: rgb(237, 178, 127);
+}
+
+#age-wrapper {
+    border: 4px solid rgb(172, 217, 88);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgb(172, 217, 88);
+    background: rgba(106, 154, 18, 0.717);
+    color: rgb(172, 217, 88);
+}
+
+#sport-wrapper {
+    border: 4px solid rgb(162, 190, 255);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgb(119, 152, 232);
+    background: rgba(72, 122, 239, 0.688);
+    color: rgb(162, 190, 255);
+}
+
+#skill-level-wrapper {
+    border: 4px solid rgb(230, 150, 242);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgb(230, 150, 242);
+    background: rgba(201, 74, 221, 0.72);
+    color: rgb(230, 150, 242);
+}
+
+@media (max-width: 1024px) {
+
+    #find-player-wrapper {
+        padding: 15px;
+    }
+
+    .find-player-form {
+        width: 90%;
+        min-height: 450px;
+        padding: 18px;
+    }
+
+    #header {
+        font-size: 26px;
+    }
+
+    #quote {
+        font-size: 18px;
+    }
+
+    .select-label {
+        font-size: 24px;
+    }
+
+    .select-button,
+    .select-button.selected {
+        max-width: 200px;
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .result-container {
+        width: 90%;
+        padding: 18px;
+    }
+
+
+    #gender-wrapper, 
+    #age-wrapper, 
+    #sport-wrapper, 
+    #skill-level-wrapper {
+        max-width: 260px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #find-player-wrapper {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .find-player-form {
+        width: 100%;
+        min-width: unset;
+        min-height: auto;
+        padding: 15px;
+        border-width: 3px;
+    }
+
+    #header {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    #quote {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .select-wrapper {
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .select-label {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .select-button,
+    .select-button.selected {
+        width: 100%;
+        max-width: 100%;
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .back-button-container {
+        justify-content: center;
+    }
+
+    .back-button {
+        width: 80px;
+        height: 42px;
+        font-size: 16px;
+    }
+
+    .match-button {
+        width: 100%;
+        font-size: 18px;
+        padding: 12px;
+    }
+
+    .match-result-header {
+        font-size: 20px;
+    }
+
+    .result-container {
+        width: 100%;
+        gap: 10px;
+    }
+
+    #user-wrapper {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .result-label {
+        font-size: 16px;
+    }
+
+    .result-wrapper {
+        width: 100%;
+    }
+
+    #gender-wrapper, 
+    #age-wrapper, 
+    #sport-wrapper, 
+    #skill-level-wrapper {
+        min-width: 150px;
+        max-width: 90%;
+        text-align: center
+    }
+}
+

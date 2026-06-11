@@ -1,0 +1,11 @@
+Flask
+cryptography
+flask-mail
+flask-mysqldb
+flask-cors
+itsdangerous
+python-dotenv
+google-genai
+flask-socketio
+requests
+apscheduler

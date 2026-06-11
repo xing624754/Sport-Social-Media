@@ -1,0 +1,642 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Commissioner", sans-serif;
+}
+
+body{
+    background: #f5f7fb;
+}
+
+
+/* CONTAINER */
+.profileContainer{
+    padding: 30px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* TOP SECTION */
+.profileTopSection{
+    background: white;
+    border-radius: 28px;
+    padding: 30px;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.profileImage{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #edf2ff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.profileInfo{
+    flex: 1;
+}
+
+.profileHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.profileHeader h1{
+    font-size: 38px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.profileHeader p{
+    margin-top: 3px;
+    font-size: 18px;
+    color: #6b7280;
+}
+
+.profileNameSection{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.profileNameRow{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* BUTTONS */
+.editProfileBtn{
+    border: none;
+    background: #111827;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.editProfileBtn:hover{
+    background: #1f2937;
+}
+
+.profileBtn{
+    display: flex;
+    gap: 14px;
+}
+
+.followBtn,
+.messageBtn,
+.editProfileBtn,
+.reportBtn{
+    border: none;
+    padding: 13px 24px;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.followBtn{
+    background: #2563eb;
+    color: white;
+}
+
+.followBtn:hover{
+    transform: translateY(-2px);
+    background: #1d4ed8;
+}
+
+.messageBtn{
+    background: #f3f4f6;
+    color: #111827;
+}
+
+.messageBtn:hover{
+    background: #e5e7eb;
+}
+
+.reportBtn{
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.reportBtn:hover{
+    background: #fecaca;
+}
+
+/* Subheader alignments for Username handles and Age Badges */
+.profileSubHeaderRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 2px;
+}
+
+.profileHandleText {
+    margin-top: 0 !important; /* Resets default margin constraints override rules */
+    font-size: 18px;
+    color: #6b7280;
+}
+
+/* Age Label Pill definition */
+.profileAgeTag {
+    background: #f4f6f3;
+    color: #374151;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    display: inline-flex;
+    align-items: center;
+}
+
+/*stat card */
+.profileStats{
+    display: flex;
+    gap: 18px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+}
+
+.statCard{
+    width: 140px;
+    height: 90px;
+    background: #f3f4f5;
+    border-radius: 18px;
+    padding: 18px 24px;
+    text-align: center;
+    transition: 0.25s;
+}
+
+
+.statCard h3{
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+
+.statCard p{
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+}
+
+
+/* tags */
+.profileTags{
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.tag{
+    background: #eef2ff;
+    color: #4338ca;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* TABS */
+.profileTabs{
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.tabBtn{
+    border: none;
+    padding: 12px 22px;
+    border-radius: 14px;
+    background: rgb(241, 243, 249);
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.25s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.tabBtn:hover{
+    transform: translateY(-2px);
+}
+
+.activeTab{
+    background: #2563eb;
+    color: white;
+}
+
+.lockedTab{
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* POSTS */
+.postsGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 28px;
+}
+
+
+.postCard{
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.multiImageBadge{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    z-index: 5;
+}
+
+.multiMediaIcon{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 5;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+}
+
+/* Pending Review Banner Overlay placement at top left edge */
+.pendingReviewBadge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(244, 130, 69, 0.95); /* Bright warning color */
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    z-index: 20; /* <--- Boost this to 20 to sit on top of post image elements & hover overlays */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    pointer-events: none; /* Allows hover rules on parent card elements to trigger smoothly */
+}
+
+.postOverlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    color: white;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.postCard:hover .postOverlay{
+    opacity: 1;
+}
+
+.postCard:hover {
+    transform: translateY(-6px);
+}
+
+.overlayContent{
+    display: flex;
+    gap: 30px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.postImage{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.postCard:hover .postImage{
+    transform: scale(1.05);
+}
+
+
+/* LOADING */
+.profileLoading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.noImagePost{
+    height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Clickable Stat card interactions */
+.clickableStat {
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.clickableStat:hover {
+    transform: translateY(-3px);
+    background: #eef2ff;
+}
+
+/* REFINED INSTAGRAM STYLE MODAL OVERLAY */
+.statsModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure this sits above everything, including structural sidebar layouts */
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+.statsModalContent {
+    background: #ffffff;
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    /* Simplified transitions prevent cross-rendering glitches during navigation changes */
+    animation: igModalFadeIn 0.12s ease-out;
+    transform: translate3d(0, 0, 0); /* Forces GPU hardware acceleration rendering */
+}
+
+@keyframes igModalFadeIn {
+    from { 
+        transform: scale(1.02); 
+        opacity: 0; 
+    }
+    to { 
+        transform: scale(1); 
+        opacity: 1; 
+    }
+}
+
+.statsModalHeader {
+    padding: 14px 16px;
+    border-bottom: 1px solid #dbdbdb; /* Classic light border separator */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerSpacer {
+    width: 28px; /* Perfectly balances centered text layout against the close button */
+}
+
+.statsModalHeader h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #262626;
+    text-align: center;
+    flex: 1;
+}
+
+.closeModalBtn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #262626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+}
+
+/* INSTAGRAM SEARCH DECORATION */
+.modalSearchContainer {
+    padding: 8px 16px;
+}
+
+.modalSearchInput {
+    width: 100%;
+    background: #efefef;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #8e8e8e;
+    outline: none;
+}
+
+.statsModalBody {
+    padding: 8px 0;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.emptyModalText {
+    text-align: center;
+    color: #8e8e8e;
+    padding: 40px 20px;
+    font-size: 14px;
+}
+
+/* USER ROW DETAILS Layout */
+.modalUserRow {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+.modalUserRow:hover {
+    background: #fafafa;
+}
+
+.modalUserImg {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #dbdbdb;
+}
+
+.modalUserMeta {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    flex: 1;
+}
+
+.modalUsername {
+    font-size: 14px;
+    font-weight: 600;
+    color: #262626;
+    line-height: 18px;
+}
+
+.modalFullName {
+    font-size: 14px;
+    font-weight: 400;
+    color: #8e8e8e;
+    line-height: 18px;
+}
+
+/* INSTAGRAM STYLE ACTION BUTTONS */
+.modalActionBtn {
+    border: none;
+    padding: 7px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.1s;
+}
+
+.modalActionBtn:hover {
+    opacity: 0.85;
+}
+
+/* Button style setups to match standard IG layout options */
+.modalActionBtn.followingMode {
+    background: #efefef;
+    color: #262626;
+}
+
+.modalActionBtn.followerMode {
+    background: #efefef;
+    color: #262626;
+}
+
+
+@media (max-width: 1024px) {
+
+    .profileTopSection {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .profileHeader {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .profileBtn {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .profileImage {
+        width: 170px;
+        height: 170px;
+    }
+
+    .profileHeader h1 {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .profileContainer {
+        padding: 20px;
+    }
+
+    .profileTopSection {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .profileImage {
+        width: 140px;
+        height: 140px;
+    }
+
+    .profileHeader h1 {
+        font-size: 28px;
+    }
+
+    .profileHeader p {
+        font-size: 14px;
+    }
+
+    .profileStats {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .statCard {
+        min-width: 100px;
+        padding: 14px 16px;
+    }
+
+    .statCard p {
+        font-size: 20px;
+    }
+
+    .profileTabs {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .tabBtn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+}

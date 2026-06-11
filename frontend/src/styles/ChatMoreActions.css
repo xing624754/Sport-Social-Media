@@ -1,0 +1,339 @@
+
+.more-actions-dropdown {
+    padding: 5px;
+    position: absolute;
+    top: 45px;
+    right: 10px;
+
+    width: 200px;
+
+    background: white;
+    border-radius: 10px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+    overflow: hidden;
+    z-index: 999;
+
+    animation: fadeDrop 0.15s ease;
+}
+
+@keyframes fadeDrop {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.more-actions-options {
+    width: 100%;
+    padding: 12px 14px;
+
+    border: none;
+    background: white;
+    border-radius: 10px;
+
+    text-align: left;
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: background 0.2s;
+}
+
+.more-actions-options:hover {
+    background: #f3f4f6;
+}
+
+.more-actions-options.danger {
+    color: #ef4444;
+}
+
+.more-actions-options.danger:hover {
+    background: #fee2e2;
+}
+
+.pop-up {
+    padding: 25px;
+}
+
+.close-pop-up {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    border: none;
+    background: none;
+
+    font-size: 18px;
+    cursor: pointer;
+
+    color: #6b7280;
+}
+
+.add-member-form,
+.delete-member-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.search-bar img {
+    width: 16px;
+    height: 16px;
+    opacity: 0.6;
+}
+
+.no-user-label {
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: grey;
+}
+
+.search-results-wrapper:hover {
+    background: #f3f4f6;
+}
+
+.profile-pic {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.action-button:disabled {
+    background: #67809f;
+    cursor: not-allowed;
+}
+
+.action-button:disabled:hover {
+    transform: translateY(0);
+}
+
+.confirm-pop-up {
+    width: 420px;
+    max-width: 92vw;
+
+    background: #ffffff;
+    border-radius: 16px;
+
+    padding: 22px;
+
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    animation: popScale 0.18s ease;
+}
+
+.confirm-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+.confirm-button {
+    padding: 8px 14px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #ef4444;
+    color: white;
+
+    cursor: pointer;
+}
+
+.cancel-button {
+    padding: 8px 14px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #e5e7eb;
+    color: #111827;
+
+    cursor: pointer;
+}
+
+.info-label {
+    font-size: 16px;
+    color: #6b7280;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.available-members {
+    max-height: 260px;
+    overflow-y: auto;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    min-height: 220px;
+    max-height: 250px;
+
+    background: #ffffff;
+}
+
+.member-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px;
+
+    border-bottom: 1px solid #f3f4f6;
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.member-wrapper:last-child {
+    border-bottom: none;
+}
+
+.member-wrapper:hover {
+    background: #f9fafb;
+}
+
+.member-wrapper .profile-pic {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 1px solid #e5e7eb;
+}
+
+.member-wrapper label {
+    flex: 1;
+
+    font-size: 14px;
+    font-weight: 500;
+    color: #111827;
+    cursor: pointer;
+}
+
+.member-wrapper .checkbox {
+    width: 18px;
+    height: 18px;
+
+    cursor: pointer;
+    accent-color: #ef4444; 
+}
+
+.member-wrapper input:checked ~ label {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+
+    .more-actions-dropdown {
+        width: 180px;
+        right: 5px;
+    }
+
+    .confirm-pop-up {
+        width: 380px;
+        padding: 20px;
+    }
+
+    .available-members {
+        max-height: 220px;
+    }
+
+    .member-wrapper {
+        padding: 12px;
+    }
+
+    .member-wrapper .profile-pic {
+        width: 34px;
+        height: 34px;
+    }
+
+    .info-label {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Dropdown becomes wider & easier to tap */
+    .more-actions-dropdown {
+        width: 160px;
+        right: 0;
+        top: 50px;
+    }
+
+    .more-actions-options {
+        padding: 14px;
+        font-size: 14px;
+    }
+
+    /* POPUPS become full-width card style */
+    .confirm-pop-up {
+        width: 92vw;
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    .pop-up {
+        padding: 18px;
+    }
+
+    .close-pop-up {
+        font-size: 20px;
+        top: 8px;
+        right: 8px;
+    }
+
+    /* MEMBER LIST */
+    .available-members {
+        max-height: 220px;
+    }
+
+    .member-wrapper {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .member-wrapper .profile-pic {
+        width: 32px;
+        height: 32px;
+    }
+
+    .member-wrapper label {
+        font-size: 13px;
+    }
+
+    .member-wrapper .checkbox {
+        width: 16px;
+        height: 16px;
+    }
+
+    /* BUTTONS */
+    .confirm-button,
+    .cancel-button {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .confirm-buttons {
+        gap: 8px;
+    }
+}

@@ -1,0 +1,361 @@
+.report-page {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35); /* dim previous page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 9999;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* main card container */
+.report-container {
+    width: 1000px;
+    height: 650px;     
+
+    background: #e3f2ff;
+    border-radius: 16px;
+    padding: 30px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    animation: popIn 0.2s ease-out;
+}
+
+/* animation */
+@keyframes popIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* HEADER */
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.report-header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.community-back-button {
+    border: none;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.community-back-button:hover {
+    background: #eee;
+}
+
+/* MONTH SWITCH */
+.report-header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.month-button {
+    border: none;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    font-size: 16px;
+}
+
+.month-button:disabled {
+    cursor: default;
+}
+
+.month-button:hover {
+    background: #eee;
+}
+
+.month-button:disabled:hover {
+    background: white;
+}
+
+.month-box {
+    background: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+/* TOP STATS */
+.top-analytics {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.analytics-wrapper {
+    background: white;
+    width: 200px;
+    height: 130px;
+    padding: 16px;
+    border-radius: 14px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.analytics-wrapper h3 {
+    margin: 0;
+    font-size: 24px;
+    color: rgb(32, 113, 194);
+}
+
+/* ACTIVE MEMBERS SECTION */
+.bottom-analytics {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    gap: 15px;
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    width: 100%;
+}
+
+.active-members-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* MEMBER CARD */
+.active-member-wrapper {
+    padding: 10px;
+    border-radius: 12px;
+    background: #fafafa;
+    border: 1px solid #eee;
+}
+
+.active-member-top {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 6px;
+    align-items: center;
+}
+
+.active-member-username {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+}
+
+.member-index {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #4f46e5;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active-member-bottom {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.member-post-count {
+    font-size: 18px;
+    font-weight: 500;
+    color: #1387c5;
+}
+
+/* BAR */
+.bar-bg {
+    width: 90%;
+    height: 10px;
+    background: #e5e7eb;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4f46e5, #06b6d4);
+    transition: width 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+
+    .report-page {
+        padding: 16px;
+    }
+
+    .report-container {
+        width: 95%;
+        height: 90vh;
+        padding: 24px;
+        overflow-y: auto;
+    }
+
+    .top-analytics {
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+
+    .analytics-wrapper {
+        width: 180px;
+        height: 120px;
+    }
+
+    .bottom-analytics {
+        height: auto;
+        min-height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .report-page {
+        padding: 0;
+        align-items: stretch;
+    }
+
+    .report-container {
+        width: 100%;
+        height: 100vh;
+
+        border-radius: 0;
+
+        padding: 18px 14px;
+
+        overflow-y: auto;
+    }
+
+    /* HEADER */
+    .report-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        margin-bottom: 20px;
+    }
+
+    .report-header-left {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .report-header-left h1 {
+        font-size: 22px;
+        margin: 0;
+    }
+
+    .report-header-right {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .community-back-button,
+    .month-button {
+        padding: 10px 14px;
+        font-size: 15px;
+    }
+
+    .month-box {
+        padding: 10px 16px;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    /* TOP ANALYTICS */
+    .top-analytics {
+        margin-top: 10px;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .analytics-wrapper {
+        width: 100%;
+        height: auto;
+
+        padding: 20px 16px;
+    }
+
+    .analytics-wrapper h3 {
+        font-size: 22px;
+    }
+
+    /* ACTIVE MEMBERS */
+    .bottom-analytics {
+        padding: 16px;
+        gap: 14px;
+
+        min-height: auto;
+        height: auto;
+    }
+
+    .bottom-analytics h2 {
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .active-members-container {
+        gap: 12px;
+    }
+
+    .active-member-wrapper {
+        padding: 12px;
+    }
+
+    .active-member-top {
+        align-items: flex-start;
+    }
+
+    .active-member-username {
+        font-size: 16px;
+        word-break: break-word;
+    }
+
+    .member-post-count {
+        font-size: 15px;
+    }
+
+    .bar-bg {
+        width: 100%;
+    }
+}

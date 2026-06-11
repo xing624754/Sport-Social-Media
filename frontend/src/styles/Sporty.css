@@ -1,0 +1,39 @@
+.sportyFullPageContainer {
+    width: 100%;
+    height: calc(100vh - 100px);
+    height: calc(100dvh - 100px); /* Adjusts height dynamically when keyboard is shown */
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    animation: sportyFadeIn 0.3s ease-out;
+}
+
+@keyframes sportyFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sportyFullPageIframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: white;
+    display: block;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .sportyFullPageContainer {
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+    }
+}

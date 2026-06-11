@@ -1,0 +1,94 @@
+/* Tab Shared Styles */
+
+.tableResponsive {
+  overflow-x: auto;
+}
+
+.col10 {
+  width: 10%;
+}
+
+.colActions {
+  width: 120px;
+  text-align: right !important;
+}
+
+.textSemibold {
+  font-weight: 600;
+}
+
+.emptyRowCell {
+  text-align: center;
+  padding: 40px;
+  color: var(--textMuted);
+}
+
+.tableFooter {
+  padding: 16px 24px;
+  background: #f1f5f9;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerStats {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--textMuted);
+}
+
+/* Moving shared table styles here as well if needed */
+.dataTable {
+  width: 95%;
+  border-collapse: collapse;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.dataTable th {
+  background-color: #f1f5f9;
+  color: var(--onSurfaceVariant);
+  padding: 16px 24px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dataTable td {
+  padding: 16px 24px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.dataTable tr:hover td {
+  background-color: rgba(248, 249, 255, 0.5);
+}
+
+.editInput {
+  width: 100%;
+  max-width: 120px;
+  padding: 8px 12px;
+  border: 1px solid var(--outlineVariant);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 16px;
+  outline: none;
+}
+
+.editInput:focus {
+  border-color: var(--primary);
+}
+
+.idBadge {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--textMuted);
+  text-transform: uppercase;
+}
+
+.actionBtns {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}

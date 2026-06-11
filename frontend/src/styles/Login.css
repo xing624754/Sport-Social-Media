@@ -1,0 +1,20 @@
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px;
+}
+
+#login-form {
+    max-width: 400px;
+}
+
+a {
+    color: #c5caff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #8288f9;
+}

@@ -1,0 +1,342 @@
+
+.equipment-page {
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    background: white;
+    min-height: 100vh;
+}
+
+.equipment-page h1 {
+    font-size: 28px;
+    margin-bottom: 16px;
+    color: #106cdc;
+}
+
+.filterBar {
+    margin-bottom: 20px;
+}
+
+.filterBar select {
+    padding: 10px 14px;
+    border-radius: 12px;
+    max-height: 100px;
+
+    border: 1px solid #ddd;
+    background: white;
+
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+
+    cursor: pointer;
+    outline: none;
+
+    transition: all 0.2s ease;
+
+    width: 200px;
+    max-width: 100%;
+}
+
+.filterBar select:hover {
+    border-color: #999;
+}
+
+.filterBar select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+.equipment-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.equipment-wrapper {
+    background: white;
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.equipment-wrapper:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.equipment-wrapper img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.equipment-name {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #222;
+}
+
+.equipment-price {
+    color: #2e7d32;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.equipment-rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #555;
+}
+
+.equipment-rating img {
+    width: 20px;
+    height: 20px;
+}
+
+.equipment-page p {
+    color: #777;
+}
+
+.equipment-details {
+    width: 90%;
+    max-width: 500px;
+
+    background: #ffffff;
+    border-radius: 16px;
+
+    padding: 20px;
+    position: relative;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+    animation: popIn 0.2s ease-in-out;
+    overflow-y: auto;
+    max-height: 90vh;
+}
+
+.equipment-details img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+
+    border-radius: 12px;
+    background: #f8f8f8;
+    padding: 10px;
+}
+
+.equipment-name {
+    font-size: 20px;
+    font-weight: 600;
+
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+
+.brand {
+    display: inline-block;
+    font-size: 14px;
+    color: #666;
+
+    margin-bottom: 10px;
+}
+
+.price {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+
+    color: #1a8917;
+    margin-bottom: 10px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-bottom: 12px;
+}
+
+.rating img {
+    width: 18px;
+    height: 18px;
+
+    border-radius: 0;
+    padding: 0;
+    background: transparent;
+    object-fit: contain;
+}
+
+.description {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.5;
+
+    margin-bottom: 15px;
+}
+
+.equipment-details a {
+    display: inline-block;
+
+    text-decoration: none;
+    background: #007bff;
+    color: white;
+
+    padding: 10px 14px;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.2s;
+}
+
+.equipment-details a:hover {
+    background: #0056b3;
+}
+
+.equipment-details p {
+    color: #888;
+    font-size: 13px;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .equipment-page {
+        padding: 12px;
+    }
+
+    .equipment-page h1 {
+        font-size: 24px;
+    }
+
+    .filterBar select {
+        width: 180px;
+        font-size: 13px;
+    }
+
+    .equipment-container {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 14px;
+    }
+
+    .equipment-wrapper img {
+        height: 140px;
+    }
+
+    .equipment-name {
+        font-size: 14px;
+    }
+
+    .equipment-details {
+        width: 95%;
+        max-width: 450px;
+        padding: 18px;
+    }
+
+    .equipment-details img {
+        height: 200px;
+    }
+
+    .equipment-rating img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .rating {
+        height: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .equipment-page {
+        padding: 10px;
+    }
+
+    .equipment-page h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .filterBar {
+        display: flex;
+        justify-content: center;
+    }
+
+    .filterBar select {
+        width: 100%;
+        max-width: 300px;
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .equipment-container {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .equipment-wrapper {
+        padding: 10px;
+    }
+
+    .equipment-wrapper img {
+        height: 120px;
+    }
+
+    .equipment-name {
+        font-size: 13px;
+    }
+
+    .equipment-price {
+        font-size: 13px;
+    }
+
+    .equipment-rating {
+        font-size: 12px;
+    }
+
+    /* modal / details view */
+    .equipment-details {
+        width: 80%;
+        height: 60%;
+        max-width: 100%;
+        max-height: 85vh;
+    }
+
+    .equipment-details img {
+        height: 180px;
+    }
+
+    .equipment-details a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .equipment-rating img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .rating {
+        height: 40px;
+    }
+}

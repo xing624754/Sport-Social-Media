@@ -1,0 +1,271 @@
+/* Feedback page container */
+.feedbackContainer {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Page heading  */
+.feedbackContainer h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #257aeb;
+    margin-bottom: 20px;
+}
+
+/* ----- Feedback form ----- */
+.feedbackForm {
+    background: #f8f9fc;
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+}
+
+.feedbackForm h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 16px;
+}
+
+.formLabel {
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 6px;
+}
+
+/* Shared style for the text input and the message box */
+.formInput,
+.formTextarea {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: #334155;
+    background: white;
+    outline: none;
+    margin-bottom: 16px;
+    font-family: "Commissioner", sans-serif;
+    transition: border-color 0.2s ease;
+}
+
+.formInput:focus,
+.formTextarea:focus {
+    border-color: #257aeb;
+}
+
+.formTextarea {
+    resize: vertical;
+    line-height: 1.5;
+}
+
+/* Red error text under the form */
+.formError {
+    font-size: 13px;
+    color: #dc2626;
+    margin-bottom: 14px;
+}
+
+.submitBtn {
+    align-self: flex-start;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 10px;
+    background: #6565fd;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: "Commissioner", sans-serif;
+    transition: background 0.2s ease;
+}
+
+.submitBtn:hover {
+    background: #4c4cf5;
+}
+
+/* ----- Feedback list ----- */
+.feedbackHistory h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 16px;
+}
+
+/* Text shown while loading or when the list is empty */
+.emptyText {
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* One feedback card */
+.feedbackCard {
+    background: #f8f9fc;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    margin-bottom: 16px;
+}
+
+/* Top row of the card: avatar + username/date + status badge */
+.feedbackCardTop {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+/* Round avatar showing the first letter of the username */
+.feedbackAvatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+/* Username + date stacked together*/
+.feedbackUserInfo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+
+.feedbackUsername {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.feedbackDate {
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* Status badge */
+.statusBadge {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+/* Green = the admin has read this feedback */
+.statusBadge.read {
+    color: #15803d;
+    background: #dcfce7;
+}
+
+/* Yellow = the admin has not read this feedback yet */
+.statusBadge.unread {
+    color: #b45309;
+    background: #fef3c7;
+}
+
+.feedbackTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 6px;
+    overflow-wrap: break-word;   /* break a very long title so it cannot overflow the card */
+}
+
+.feedbackMessage {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.5;
+    white-space: pre-wrap;       /* keep the line breaks the user typed */
+    overflow-wrap: break-word;   /* break a very long word so it cannot overflow the card */
+}
+
+/* ----- "Edit" button shown on each feedback card ----- */
+.editBtn {
+    margin-top: 12px;
+    align-self: flex-start;   /* keep the button small, not stretched full-width */
+    padding: 7px 18px;
+    border: 1px solid #6565fd;
+    border-radius: 8px;
+    background: white;
+    color: #6565fd;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: "Commissioner", sans-serif;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.editBtn:hover {
+    background: #6565fd;
+    color: white;
+}
+
+/* Wrapper around the normal view of a card (title + message + Edit button) */
+.feedbackView {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Wrapper that holds the input + textarea while a card is being edited */
+.feedbackEdit {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Save + Cancel buttons */
+.feedbackEditButtons {
+    display: flex;
+    gap: 10px;
+}
+
+.saveBtn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #6565fd;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: "Commissioner", sans-serif;
+    transition: background 0.2s ease;
+}
+
+.saveBtn:hover {
+    background: #4c4cf5;
+}
+
+.cancelBtn {
+    padding: 8px 20px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: "Commissioner", sans-serif;
+    transition: background 0.2s ease;
+}
+
+.cancelBtn:hover {
+    background: #f1f5f9;
+}
+
+/* Stack on smaller screens */
+@media (max-width: 1100px) {
+    .userHomeLayout {
+        grid-template-columns: 1fr;
+    }
+}
+

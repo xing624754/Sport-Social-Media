@@ -1,0 +1,531 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Commissioner", sans-serif;
+}
+
+body {
+    background: white;
+}
+
+/* Layout */
+.adminContainer {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.adminSidebar {
+    position: fixed;
+    top: 60px; 
+
+    left: 0;
+
+    height: calc(100vh - 60px); 
+    
+    background: #f8f9fc;
+    color: rgb(30, 13, 13);
+
+    display: flex;
+    flex-direction: column;
+
+    transition: width 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+
+    padding-top: 10px; 
+    overflow-y: auto;   
+
+    scrollbar-width: none;       
+    -ms-overflow-style: none;  
+}
+
+.adminSidebar.expanded {
+    width: 280px;
+}
+
+.adminSidebar.collapsed {
+    width: 100px;
+}
+
+/* push content */
+.adminSidebar.collapsed ~ .adminMain {
+    margin-left: 100px;
+}
+
+.adminSidebar.expanded ~ .adminMain {
+    margin-left: 280px;
+}
+
+/* Menu */
+.menu {
+    list-style: none;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.menuItem {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    border-radius: 14px;
+    cursor: pointer;
+    color: #334155;
+    transition: all 0.25s ease, padding 0.3s ease;
+}
+
+/* collapsed → center */
+.adminSidebar.collapsed .menuItem {
+    justify-content: center;
+    padding: 14px 10px;
+}
+
+/* hover behavior */
+.adminSidebar.expanded .menuItem:hover {
+    background: #d8e2ff;
+    transform: translateX(4px);
+}
+
+.adminSidebar.collapsed .menuItem:hover {
+    background: #d8e2ff;
+    transform: none;
+}
+
+.menuItem.active {
+    background-color: #6565fd;
+    color: white;
+}
+
+/* Icon */
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    transition: transform 0.25s ease;
+}
+
+.adminSidebar.collapsed .icon {
+    transform: scale(1.1);
+}
+
+/* Text */
+.text {
+    margin-left: 15px;
+    white-space: nowrap;
+    font-size: 17px;
+    opacity: 1;
+    transform: translateX(0);
+    transition: 
+        opacity 0.2s ease 0.1s,
+        transform 0.2s ease 0.1s;
+}
+
+.adminSidebar.collapsed .text {
+    opacity: 0;
+    transform: translateX(-10px);
+    pointer-events: none;
+    transition: 
+        opacity 0.15s ease,
+        transform 0.15s ease;
+}
+
+/* Toggle button */
+.toggleBtn {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: none;
+    padding: 14px 16px;
+    margin: 0 12px 8px 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+/* center when collapsed */
+.adminSidebar.collapsed .toggleBtn {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* right when expanded */
+.adminSidebar.expanded .toggleBtn {
+    margin-left: auto;
+}
+
+/* Topbar */
+.adminTopbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+    background: #f8f9fc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1500;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);  
+}
+
+.topbarLeft {
+    display: flex;
+    align-items: center;
+}
+
+.topbarLogo {
+    height: 35px;
+}
+
+.topbarRight {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.logo img {
+    height: 40px;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.logoName {
+    font-size: 28px;
+    font-weight: 800;
+    color: #257aeb;
+    white-space: nowrap;
+}
+
+/* Icons */
+.iconBtn {
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: 0.2s;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconBtn:hover {
+    transform: translateY(-2px) scale(1.1);
+}
+
+.iconBtn .material-symbols-outlined {
+    font-size: 32px;
+    color: #1e293b;
+}
+
+/* Notification badge */
+.notificationBadge {
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    border-radius: 999px;
+    background: #ef4444;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Profile */
+.adminPic {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.adminProfileCircle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #2563eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+}
+
+/* Main */
+.adminMain {
+    flex: 1;
+    margin-left: 260px;
+    background: white;
+    transition: margin-left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Content */
+.adminContent {
+    margin-top: 60px;
+    padding: 20px;
+    background: white;
+}
+
+.profileContainer {
+    cursor: pointer;
+}
+
+/* =========================================
+   NOTIFICATION DROPDOWN
+========================================= */
+.notificationWrapper {
+    position: relative;
+}
+
+.notificationPanel {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 360px;
+    max-height: 420px;
+    overflow-y: auto;
+    background: white;
+    border-radius: 18px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    z-index: 5000;
+    scrollbar-width: thin;
+    animation: dropdownFade 0.18s ease;
+}
+
+.notificationHeader {
+    font-size: 15px;
+    font-weight: 700;
+    color: #334155;
+    padding: 14px 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+@keyframes dropdownFade {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   NOTIFICATION ITEM (FLEX LAYOUT)
+========================================= */
+.notificationItem {
+    padding: 14px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    border-bottom: 1px solid #f1f5f9;
+    position: relative;
+}
+
+.notificationItem:last-child {
+    border-bottom: none;
+}
+
+.notificationItem:hover {
+    background: #f8fafc;
+}
+
+.notificationItem.unread {
+    background: #eff6ff;
+}
+
+.unreadDot {
+    width: 8px;
+    height: 8px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 18px;
+    right: 12px;
+}
+
+.notificationText,
+.notificationContent {
+    font-size: 13px;
+    color: #334155;
+    line-height: 1.4;
+    margin: 0;
+    word-wrap: break-word;
+    flex: 1;
+}
+
+.notificationTime {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 4px;
+}
+
+.emptyNotification,
+.notificationEmpty {
+    padding: 30px 20px;
+    text-align: center;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.typeTag {
+    font-size: 11px;
+    padding: 2px 10px;
+    border-radius: 999px;
+    text-transform: capitalize;
+    font-weight: 500;
+    align-self: flex-start;
+    white-space: nowrap;
+}
+
+.typeTag.announcement {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+/* =========================================
+   REFINED ANNOUNCEMENT MODAL & CENTERED IMAGE
+========================================= */
+.announcementOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.announcementModal {
+    width: 650px; /* Slightly wider for better presentation */
+    max-height: 85vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column; /* Stacks contents linearly */
+}
+
+.announcementModal h2 {
+    font-size: 24px;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+/* Image Container for Absolute Centering */
+.announcementModal img.announcementImage {
+    display: block;
+    max-width: 100%;
+    max-height: 45vh; /* Prevents huge vertical images from taking over the screen */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin: 20px auto; /* Perfect horizontal centering + vertical space */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.announcementModal p {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.6;
+    margin-top: 10px;
+    word-wrap: break-word;
+}
+
+/* =========================================
+   SCROLLBAR & HOVER EFFORTS
+========================================= */
+.notificationPanel::-webkit-scrollbar {
+    width: 6px;
+}
+
+.notificationPanel::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.notificationPanel::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 999px;
+}
+
+.profileWrapper,
+.profileContainer {
+    transition: 0.2s ease;
+}
+
+.profileWrapper:hover,
+.profileContainer:hover {
+    transform: none;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 1024px) {
+    .adminSidebar.expanded { width: 220px; }
+    .adminSidebar.collapsed { width: 80px; }
+    .adminSidebar.collapsed ~ .adminMain { margin-left: 80px; }
+    .adminSidebar.expanded ~ .adminMain { margin-left: 220px; }
+    
+    .adminTopbar { padding: 0 15px; }
+    .topbarRight { gap: 12px; }
+    .iconBtn { font-size: 28px; width: 45px; height: 45px; }
+    .logoName { font-size: 22px; }
+    .notificationPanel { width: 300px; }
+    .text { font-size: 15px; }
+    .icon { font-size: 26px; width: 36px; height: 36px; }
+    .announcementModal { width: 90%; }
+}
+
+@media(max-width:768px) {
+    .adminSidebar { width: 70px !important; z-index: 2000; }
+    .adminSidebar.expanded, .adminSidebar.collapsed { width: 70px !important; }
+    .adminMain { margin-left: 70px !important; }
+    .text { display: none; }
+    .menuItem { justify-content: center; padding: 12px; }
+    .icon { font-size: 22px; width: 38px; height: 38px; }
+    
+    .adminTopbar { padding: 0 12px; }
+    .logoName { font-size: 18px; }
+    .iconBtn { font-size: 22px; width: 38px; height: 38px; }
+    .notificationPanel { width: 300px; right: -20px; }
+}
+
+@media(max-width:480px) {
+    .notificationPanel { width: 260px; }
+    .announcementModal { padding: 18px; }
+    .announcementModal h2 { font-size: 19px; }
+}

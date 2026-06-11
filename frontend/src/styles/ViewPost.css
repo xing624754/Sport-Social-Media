@@ -1,0 +1,257 @@
+/* View post container */
+.viewPostContainer {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Back button */
+.backBtn {
+    padding: 8px 16px;
+    border: none;
+    background: #f8f9fc;
+    color: #334155;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    font-family: "Commissioner", sans-serif;
+}
+
+.backBtn:hover {
+    background: #d8e2ff;
+}
+
+/* Main post card */
+.viewPostCard {
+    background: #f8f9fc;
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    margin-bottom: 24px;
+}
+
+.viewPostHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.viewPostAvatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #2563eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.viewPostUserInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.viewPostUsername {
+    font-size: 16px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.viewPostTime {
+    font-size: 13px;
+    color: #64748b;
+}
+
+.viewPostMedia img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 16px;
+}
+
+.viewPostMediaPlaceholder {
+    width: 100%;
+    height: 320px;
+    background: #e2e8f0;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.viewPostTitle {
+    font-size: 22px;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 10px;
+    overflow-wrap: break-word;   /* break long unbroken titles */
+}
+
+.viewPostDescription {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    overflow-wrap: break-word;   /* break long text like "hhhhhh…" */
+    word-break: break-word;
+}
+
+/* Hashtags under the caption */
+.viewPostHashtags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.viewPostHashtag {
+    background: #eff6ff;
+    color: #2563eb;
+    padding: 3px 12px;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.viewPostFooter {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    color: #64748b;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 12px;
+    align-items: center;
+}
+
+.viewPostFooter .footerItem {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.viewPostFooter .footerItem:hover {
+    color: #6565fd;
+}
+
+.viewPostFooter .footerItem .material-symbols-outlined {
+    font-size: 22px;
+}
+
+.viewPostFooter .bookmark {
+    margin-left: auto;
+}
+
+/* Comments section */
+.commentsSection {
+    background: #f8f9fc;
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.commentsSection h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 16px;
+}
+
+.commentItem {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.commentItem:last-child {
+    border-bottom: none;
+}
+
+.commentAvatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #6565fd;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.commentBody {
+    flex: 1;
+}
+
+.commentUsername {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.commentText {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.5;
+}
+
+/* "No comments yet" message */
+.emptyComments {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+/* Comment input row */
+.commentForm {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.commentInput {
+    flex: 1;                       
+    padding: 10px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #334155;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.commentInput:focus {
+    border-color: #6565fd;         
+}
+
+.commentSubmit {
+    background: #6565fd;          
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.commentSubmit:hover {
+    background: #5151e0;
+}

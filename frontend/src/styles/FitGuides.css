@@ -1,0 +1,123 @@
+/* Page heading */
+.fitGuidesContainer h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #257aeb;
+    margin-bottom: 20px;
+}
+
+/* Sport filter dropdown bar */
+.filterBar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    padding: 14px 16px;
+    background: #f8f9fc;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.filterBar label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #334155;
+}
+
+.filterBar select {
+    padding: 8px 14px;
+    border-radius: 14px;
+    border: 1px solid #ddd;
+    background: white;
+    font-size: 15px;
+    color: #334155;
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s;
+}
+
+.filterBar select:focus {
+    border-color: #257aeb;
+}
+
+/* Video grid */
+.videoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+/* Video card */
+.videoCard {
+    background: #f8f9fc;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    padding: 12px;
+    transition: all 0.25s ease;
+}
+
+.videoCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.videoCard iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 14px;
+}
+
+.videoCard h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #334155;
+    margin: 12px 0 6px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.videoCard p {
+    font-size: 13px;
+    color: #64748b;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Mobile / responsive styles */
+
+/* Tablets and below */
+@media (max-width: 768px) {
+    .fitGuidesContainer h1 {
+        font-size: 24px;          /* heading a bit smaller */
+        margin-bottom: 16px;
+    }
+
+    .videoGrid {
+        grid-template-columns: 1fr;   /* one video per row → never overflows */
+        gap: 16px;
+    }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+    .filterBar {
+        flex-direction: column;   
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .filterBar select {
+        width: 100%;              
+    }
+
+    .videoCard iframe {
+        height: 180px;           
+    }
+}
+

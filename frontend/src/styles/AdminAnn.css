@@ -1,0 +1,198 @@
+.announcementPage {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 8px 4px 40px;
+}
+
+.announcementPage h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 6px;
+}
+
+.announcementPage h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #334155;
+    margin: 28px 0 14px;
+}
+
+/* ----- Create form (card) ----- */
+.announcementForm {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: #fff;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #eef2f7;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.announcementForm label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #334155;
+}
+
+.announcementForm input[type="text"],
+.announcementForm textarea {
+    padding: 10px 12px;
+    border: 1px solid #d8dee9;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #1e293b;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.announcementForm input[type="text"]:focus,
+.announcementForm textarea:focus {
+    border-color: #6565fd;
+    box-shadow: 0 0 0 3px rgba(101, 101, 253, 0.12);
+}
+
+.announcementForm textarea {
+    resize: vertical;
+    min-height: 110px;
+    line-height: 1.5;
+}
+
+/* styled file picker (native input is hidden) */
+.fileUploadBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    max-width: 100%;
+    padding: 10px 16px;
+    border: 1.5px dashed #cbd5e1;
+    border-radius: 10px;
+    background: #f8fafc;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.fileUploadBtn:hover {
+    border-color: #6565fd;
+    color: #6565fd;
+    background: #f5f5ff;
+}
+
+.fileUploadBtn .material-symbols-outlined {
+    font-size: 20px;
+}
+
+/* live character counter under the content box */
+.charCount {
+    align-self: flex-end;
+    font-size: 12px;
+    color: #94a3b8;
+    margin-top: -2px;
+    font-weight: 500;
+}
+
+.sendBtn {
+    align-self: flex-start;
+    background: #6565fd;
+    color: #fff;
+    border: none;
+    padding: 11px 26px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.sendBtn:hover {
+    background: #5151e0;
+    transform: translateY(-1px);
+}
+
+/* ----- Sent announcements list ----- */
+.announcementList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.announcementItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: #fff;
+    padding: 18px;
+    border-radius: 14px;
+    border: 1px solid #eef2f7;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.announcementText {
+    min-width: 0;          /* allow long content to wrap */
+    flex: 1;
+}
+
+.announcementText strong {
+    display: block;
+    font-size: 16px;
+    color: #1e293b;
+    margin-bottom: 4px;
+}
+
+.announcementText p {
+    margin: 0;
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre-wrap;        /* keep line breaks the admin typed */
+    overflow-wrap: break-word;    /* wrap long unbroken text */
+}
+
+.announcementImage {
+    width: 84px;
+    height: 84px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+}
+
+.deleteBtn {
+    background: #fee2e2;
+    color: #dc2626;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.deleteBtn .material-symbols-outlined {
+    font-size: 20px;
+}
+
+.deleteBtn:hover {
+    background: #fecaca;
+}
+
+.emptyText {
+    color: #94a3b8;
+    font-size: 14px;
+}

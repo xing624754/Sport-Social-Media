@@ -1,0 +1,25 @@
+.logo-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 60px;
+    padding: 0 20px;
+
+    background: rgb(255, 255, 255); 
+
+    box-shadow: 0 4px 18px rgb(0, 31, 98);
+
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    width: 100px;
+}
+
+.app-name{
+    color: #2181ff;
+    font-size: 26px;
+    font-weight: 800;
+}
